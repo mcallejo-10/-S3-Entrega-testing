@@ -1,4 +1,3 @@
-
 # Sprint 3 IT Academy | Video management tool
 
 ## Introduction
