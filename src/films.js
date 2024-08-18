@@ -1,61 +1,71 @@
 // Exercise 1: Get the array of all directors.
 function getAllDirectors(array) {
-  let result =  array.map(movie => (movie.director))
-  console.log("EXERCICE 1 ->", result);
+  let result = array.map((movie) => movie.director);
+  console.log('EXERCICE 1 ->', result);
   return result;
 }
-// getAllDirectors(movies); 
+// getAllDirectors(movies);
 
 // Exercise 2: Get the films of a certain director
 function getMoviesFromDirector(array, director) {
   let result = array.filter((movie) => movie.director === director);
-  console.log("EXERCICE 2 ->", result);
+  console.log('EXERCICE 2 ->', result);
   return result;
 }
 
-
 // Exercise 3: Calculate the average of the films of a given director.
 function moviesAverageOfDirector(array, director) {
-  let directorArray = array.filter(movie => movie.director === director)
+  let directorArray = array.filter((movie) => movie.director === director);
   if (directorArray.length == 0) return 0;
-  
-  let result = (directorArray.reduce((a, b) => a + b.score, 0).toFixed(2)) / directorArray.length;
-  console.log("EXERCICE 3 ->", result);
-  return result
+
+  let result =
+    directorArray.reduce((a, b) => a + b.score, 0).toFixed(2) /
+    directorArray.length;
+  console.log('EXERCICE 3 ->', result);
+  return result;
 }
 
-// Exercise 4:  Alphabetic order by title 
+// Exercise 4:  Alphabetic order by title
 function orderAlphabetically(array) {
-  let moviesArray = array.map(movie => movie.title)
-  
-  moviesArray.sort();
-  if (moviesArray.length > 20) moviesArray.splice(20)
+  let moviesArray = array.map((movie) => movie.title).sort();
 
-  console.log("EXERCICE 4 ->", moviesArray);
-  return moviesArray
+  if (moviesArray.length > 20) moviesArray.splice(20);
+
+  console.log('EXERCICE 4 ->', moviesArray);
+  return moviesArray;
 }
 
 // Exercise 5: Order by year, ascending
-function orderByYear() {
-  
+function orderByYear(array) {
+  let moviesArray = array.map((movie) => {
+    return {
+      title: movie.title,
+      year: movie.year
+    };
+  });
+
+  moviesArray.sort((a, b) => {
+    if (a.year === b.year) {
+      return a.title.localeCompare(b.title);
+    }
+    return a.year - b.year;
+  });
+
+  console.log(moviesArray);
+
+  return moviesArray;
 }
 
+
+// orderByYear(movies);
 // Exercise 6: Calculate the average of the movies in a category
-function moviesAverageByCategory() {
-  
-}
+function moviesAverageByCategory() {}
 
 // Exercise 7: Modify the duration of movies to minutes
-function hoursToMinutes() {
-  
-}
+function hoursToMinutes() {}
 
 // Exercise 8: Get the best film of a year
-function bestFilmOfYear() {
-  
-}
-
-
+function bestFilmOfYear() {}
 
 // The following is required to make unit tests work.
 /* Environment setup. Do not modify the below code. */
@@ -68,6 +78,6 @@ if (typeof module !== 'undefined') {
     orderByYear,
     moviesAverageByCategory,
     hoursToMinutes,
-    bestFilmOfYear,
+    bestFilmOfYear
   };
 }
