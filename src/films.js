@@ -4,7 +4,7 @@ function getAllDirectors(array) {
   console.log('EXERCICE 1 ->', result);
   return result;
 }
-// getAllDirectors(movies);
+
 
 // Exercise 2: Get the films of a certain director
 function getMoviesFromDirector(array, director) {
@@ -19,8 +19,8 @@ function moviesAverageOfDirector(array, director) {
   if (directorArray.length == 0) return 0;
 
   let result =
-  Math.round((directorArray.reduce((a, b) => a + b.score, 0) /
-    directorArray.length) * 100) / 100;
+    Math.round((directorArray.reduce((a, b) => a + b.score, 0) /
+      directorArray.length) * 100) / 100;
   console.log('EXERCICE 3 ->', result);
   return result;
 }
@@ -55,31 +55,27 @@ function orderByYear(array) {
   return moviesArray;
 }
 
-
-// orderByYear(movies);
 // Exercise 6: Calculate the average of the movies in a category
 function moviesAverageByCategory(array, genre) {
   let categoryArray = array.filter(movies => movies.genre.some(item => item === genre));
   if (categoryArray.length == 0) return 0;
-  
+
   let categoryAverage = Math.round((categoryArray.reduce((a, b) => a + b.score, 0) /
-  categoryArray.length) * 100) / 100;
+    categoryArray.length) * 100) / 100;
 
   console.log('EXERCICE 6 ->', categoryAverage);
   return categoryAverage;
 }
 
-
 // Exercise 7: Modify the duration of movies to minutes
-
 function hoursToMinutes(array) {
   return array.map(element => {
     return {
-      ...element,      
+      ...element,
       duration: transformToMinutes(element.duration)
-    };    
+    };
   });
-}    
+}
 
 function transformToMinutes(duration) {
   let hours = 0;
@@ -90,8 +86,8 @@ function transformToMinutes(duration) {
     hours = parseInt(matchHours[1]) * 60;
   }
   if (matchMinutes) {
-  minutes = parseInt(matchMinutes[1]);
-  }  
+    minutes = parseInt(matchMinutes[1]);
+  }
   console.log('Exercici 7 ->', hours + minutes)
   return hours + minutes;
 }
@@ -104,12 +100,12 @@ function bestFilmOfYear(array, year) {
   console.log('before', yearArray);
 
   yearArray.sort((a, b) => b.score - a.score);
-  
-  const bestFilm = []; 
+
+  const bestFilm = [];
   bestFilm.push(yearArray[0]);
   console.log('sorted', yearArray);
   return bestFilm;
-  
+
 }
 
 // The following is required to make unit tests work.
