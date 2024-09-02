@@ -98,7 +98,19 @@ function transformToMinutes(duration) {
 
 
 // Exercise 8: Get the best film of a year
-function bestFilmOfYear() {}
+function bestFilmOfYear(array, year) {
+  const yearArray = array.filter(movie => movie.year == year)
+
+  console.log('before', yearArray);
+
+  yearArray.sort((a, b) => b.score - a.score);
+  
+  const bestFilm = []; 
+  bestFilm.push(yearArray[0]);
+  console.log('sorted', yearArray);
+  return bestFilm;
+  
+}
 
 // The following is required to make unit tests work.
 /* Environment setup. Do not modify the below code. */
