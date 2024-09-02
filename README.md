@@ -2,9 +2,16 @@
 
 ## Descripción
 
-Este proyecto contiene una serie de ejercicios básicos de JavaScript que deben superar una serie de pruebas automatizadas. El objetivo no es mostrar resultados en pantalla, sino asegurar que el código cumpla con los criterios definidos por los tests. También hemos creado alguno tests.
+Este proyecto contiene una serie de ejercicios básicos de JavaScript que deben superar una serie de pruebas automatizadas. El objetivo no es mostrar resultados en pantalla, sino asegurar que el código cumpla con los criterios definidos por los tests. También crear algunos de los tests.
 
+## Tecnologías utilizadas 
 
+- JavaScript
+- HTML5
+- Node.js
+- npm
+
+  
 ## Requisitos
 
 - **Node.js** v12 o superior
@@ -34,7 +41,8 @@ Para ejecutar las pruebas y verificar tus soluciones, utiliza el siguiente coman
 npm test
 ```
 
-Esto ejecutará todas las pruebas definidas en el proyecto y mostrará un informe con los resultados. El objetivo es modificar el código de manera que todas las pruebas pasen.
+Esto ejecutará todas las pruebas definidas en el proyecto y mostrará un informe con los resultados. 
+El objetivo es modificar el código de manera que todas las pruebas pasen.
 
 ## Estructura del Proyecto
 
