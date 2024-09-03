@@ -41,8 +41,15 @@ Para ejecutar las pruebas y verificar tus soluciones, utiliza el siguiente coman
 npm test
 ```
 
-Esto ejecutará todas las pruebas definidas en el proyecto y mostrará un informe con los resultados. 
-El objetivo es modificar el código de manera que todas las pruebas pasen.
+
+Para verlo en el navegador utiliza el siguiente comando:
+
+```bash
+npm run test:watch
+```
+
+Abre el archivo test-results.html generado para ver los resultados de la prueba.
+
 
 ## Estructura del Proyecto
 
